@@ -1,0 +1,185 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+#mobile, #tablet {
+    display: none;
+}
+
+.container {
+    color: #fff;
+    display: grid;
+    /* gap: 10px; */
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "nav nav"
+    "header content1"
+    "content2 content2"
+    "content2 content2"
+    "content3 image"
+    "content3 sidebar"
+    "banner banner"
+    ;
+
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+nav {
+    background-color: aquamarine;
+    grid-area: nav;
+    padding: var(--my-padding);
+
+}
+
+.nav-container {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.content1 {
+    align-items: center;
+    display: grid;
+    background-color: tomato;
+    grid-area: content1;
+    padding: var(--my-padding);
+
+}
+
+
+.content2 {
+    align-items: center;
+    display: grid;
+    background-color: violet;
+    grid-area: content2;
+    padding: var(--my-padding);
+
+}
+
+
+.content3 {
+    align-items: center;
+    display: grid;
+    background-color: purple;
+    grid-area: content3;
+    padding: var(--my-padding);
+
+}
+
+.sidebar {
+    align-items: center;
+    display: grid;
+    background-color: cadetblue;
+    grid-area: sidebar;
+    padding: var(--my-padding);
+}
+
+.image {
+    align-items: center;
+    display: grid;
+    background-color: sienna;
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.banner {
+    align-items: center;
+    display: grid;
+    background-color: slategray;
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+header {
+    align-items: center;
+    display: grid;
+    background-color: steelblue;
+    grid-area: header;
+    padding: var(--my-padding);
+
+}
+
+footer {
+    align-items: center;
+    display: grid;
+    background-color: skyblue;
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+
+/* @media (max-width: 1024px) { */
+@media (min-width: 480px) and (max-width: 900px) {
+
+    #mobile, #desktop {
+        display: none
+    }
+
+    #tablet {
+        display: block;
+    }
+
+    .nav-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .container {
+        grid-template-columns: 0.5fr 1.75fr 0.75fr;
+        grid-template-rows: 0.5fr 0.5fr 1.5fr 2fr 1fr 1fr ;
+        grid-template-areas: 
+        "nav nav nav"
+        "header header header"
+        "content2 content2 content2"
+        "content1 content3 content3"
+        "content1 banner banner"
+        "content1 sidebar image"
+        ;
+    }
+    
+}
+
+@media (max-width: 480px) {
+
+    #desktop, #tablet {
+        display: none;
+    }
+
+    #mobile {
+        display: block;
+    }
+
+    .nav-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr; 
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr 2.5fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "nav"
+        "header"
+        "content1"
+        "content2"
+        "content3"
+        "banner"
+        "sidebar"
+        "image";
+    }
+}
